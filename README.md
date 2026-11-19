@@ -90,6 +90,15 @@ tests/                 the byte layouts, pinned offscreen
 `shark shot <path> [width height]` renders the window offscreen and saves it,
 which is how `screenshot.png` is made.
 
+## Publishing notes
+
+This repository contains only original code and an original icon: no files,
+strings or assets from the vendor's Windows software, and no binaries. The
+vendor package was only inspected to learn the wire format, and every layout
+below was then confirmed against a real mouse. Nothing here is endorsed by or
+affiliated with Attack Shark; the name is used to say which device it works
+with.
+
 ## Credits
 
 The HID framing was worked out by others before me:
