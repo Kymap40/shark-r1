@@ -2,14 +2,17 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 
-// Every shortcut in one place, on ?.
+// Every shortcut in one place, on ?. Closing asks the window to hide it,
+// instead of assigning to `visible` -- that would break the binding and the
+// overlay would never open again.
 Rectangle {
     id: overlay
+    signal dismissed()
     color: "#cc000000"
 
     MouseArea {
         anchors.fill: parent
-        onClicked: overlay.visible = false
+        onClicked: overlay.dismissed()
     }
 
     Rectangle {

@@ -127,16 +127,27 @@ ApplicationWindow {
                         color: win.page === index ? theme.accent
                              : navMouse.containsMouse ? theme.surface : "transparent"
 
-                        Label {
-                            anchors.verticalCenter: parent.verticalCenter
-                            anchors.left: parent.left
-                            anchors.right: parent.right
+                        RowLayout {
+                            anchors.fill: parent
                             anchors.leftMargin: 10
                             anchors.rightMargin: 8
-                            text: win.compact ? String(index + 1) : (index + 1) + "  " + modelData
-                            elide: Text.ElideRight
-                            font.pixelSize: 13
-                            color: win.page === index ? theme.accentForeground : theme.foreground
+                            spacing: 6
+
+                            Label {
+                                Layout.fillWidth: true
+                                text: win.compact ? "" : modelData
+                                elide: Text.ElideRight
+                                font.pixelSize: 13
+                                color: win.page === index ? theme.accentForeground : theme.foreground
+                            }
+                            // The digit is the keyboard shortcut, kept apart
+                            // from the name so it never reads as a preset.
+                            Label {
+                                text: index + 1
+                                font.pixelSize: 11
+                                opacity: 0.6
+                                color: win.page === index ? theme.accentForeground : theme.subtle
+                            }
                         }
                         MouseArea {
                             id: navMouse
@@ -479,6 +490,7 @@ ApplicationWindow {
     HelpOverlay {
         anchors.fill: parent
         visible: win.showHelp
+        onDismissed: win.showHelp = false
     }
 
     Dialog {
