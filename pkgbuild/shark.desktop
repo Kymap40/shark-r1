@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Name=Attack Shark R1
+Name[ru]=Attack Shark R1
+GenericName=Mouse settings
+GenericName[ru]=Настройки мыши
+Comment=DPI stages, polling rate and timing for the Attack Shark R1
+Comment[ru]=Ступени DPI, частота опроса и тайминги для Attack Shark R1
+Exec=shark open
+Icon=shark
+Terminal=false
+Categories=Settings;HardwareSettings;
+Keywords=mouse;dpi;polling;gaming;attack shark;
+StartupWMClass=shark

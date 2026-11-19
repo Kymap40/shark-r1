@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <g fill="none" stroke="#e6e6e6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="19" y="9" width="26" height="46" rx="13"/>
+    <path d="M32 9v13"/>
+    <path d="M28.5 17h7"/>
+  </g>
+  <!-- the shark fin: the one shape that says which mouse this is -->
+  <path d="M32 4l7-3-3 8z" fill="#e6e6e6"/>
+</svg>

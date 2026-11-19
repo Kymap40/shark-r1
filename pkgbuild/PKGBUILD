@@ -1,0 +1,28 @@
+pkgname=shark
+pkgver=0.1.0
+pkgrel=1
+pkgdesc='Configure an Attack Shark R1 gaming mouse: DPI stages, polling rate, sleep and click timing'
+arch=('x86_64' 'aarch64')
+url='https://github.com/kymap40/shark'
+license=('MIT')
+depends=('qt6-base' 'qt6-declarative' 'qt6-wayland' 'libusb' 'systemd-libs')
+makedepends=('gcc' 'make' 'qt6-base' 'qt6-declarative')
+source=()
+sha256sums=()
+
+build() {
+  cd "$startdir/.."
+  ./bin/build
+}
+
+package() {
+  cd "$startdir/.."
+  install -Dm755 build/shark "$pkgdir/usr/bin/shark"
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 "$startdir/shark.svg" "$pkgdir/usr/share/icons/hicolor/scalable/apps/shark.svg"
+  install -Dm644 "$startdir/shark.desktop" "$pkgdir/usr/share/applications/shark.desktop"
+
+  # Without this the kernel holds the mouse's vendor interface and the app can
+  # only report "no permission".
+  install -Dm644 "$startdir/99-shark.rules" "$pkgdir/usr/lib/udev/rules.d/99-shark.rules"
+}

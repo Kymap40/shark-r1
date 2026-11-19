@@ -1,0 +1,17 @@
+{
+  "DPI stages": "DPI stages",
+  "Performance": "Performance",
+  "Timing": "Timing",
+  "Profiles": "Profiles",
+  "Add": "Add",
+  "Delete": "Delete",
+  "Battery": "Battery",
+  "Apply": "Apply",
+  "Keyboard": "Keyboard",
+  "Quit": "Quit",
+  "Name": "Name",
+  "%1% · %2": "%1% · %2",
+  "Idle sleep: %1 min": "Idle sleep: %1 min",
+  "Deep sleep: %1 min": "Deep sleep: %1 min",
+  "Click response: %1 ms": "Click response: %1 ms"
+}

@@ -1,0 +1,7 @@
+build/
+*.o
+*.qrc.cpp
+Makefile
+pkgbuild/pkg/
+pkgbuild/src/
+pkgbuild/*.pkg.tar.zst

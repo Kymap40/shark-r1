@@ -1,0 +1,6 @@
+# The Attack Shark R1 keeps its configuration behind a vendor HID interface
+# (interface 2 of the dongle), which the kernel claims and no desktop tool can
+# reach. uaccess hands the device to the logged-in user; the group is the
+# fallback for sessions where logind does not apply ACLs.
+SUBSYSTEM=="usb", ATTR{idVendor}=="1d57", ATTR{idProduct}=="fa60", TAG+="uaccess", GROUP="wheel", MODE="0660"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1d57", ATTR{idProduct}=="fa61", TAG+="uaccess", GROUP="wheel", MODE="0660"
