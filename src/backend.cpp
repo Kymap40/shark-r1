@@ -128,15 +128,14 @@ void Backend::publishAll() {
 }
 
 void Backend::probeDevice() {
-    const bool was = connected();
     if (!m_device.open()) {
-        if (was)
-            emit deviceChanged();
-        else
-            emit deviceChanged();
+        emit deviceChanged();
         return;
     }
     emit deviceChanged();
+    // The level only arrives when the mouse is awake, so this may come back
+    // empty; pressing Battery retries.
+    QTimer::singleShot(300, this, &Backend::refreshBattery);
 }
 
 void Backend::setValue(const QString &key, const QVariant &value) {
